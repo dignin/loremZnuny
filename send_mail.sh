@@ -7,11 +7,11 @@ if [ -z "$1" ]; then
 fi
 
 COUNT=$1
-OTRS_SCRIPT=~/bin/otrs.Console.pl
+ZNUNY_SCRIPT=~/bin/znuny.Console.pl
 
 # Check if the OTRS script exists
-if [ ! -f "$OTRS_SCRIPT" ]; then
-  echo "Error: OTRS script $OTRS_SCRIPT does not exist."
+if [ ! -f "$ZNUNY_SCRIPT" ]; then
+  echo "Error: Znuny script $ZNUNY_SCRIPT does not exist."
   exit 1
 fi
 
@@ -92,7 +92,7 @@ do
     echo "<p>Thank you for your prompt attention to these issues.</p>"
     echo "<p>Best regards,<br>User$i</p>"
     echo "</body></html>"
-  } | "$OTRS_SCRIPT" Maint::PostMaster::Read
+  } | "$ZNUNY_SCRIPT" Maint::PostMaster::Read
 done
 
 echo "Sent $COUNT emails to OTRS"
